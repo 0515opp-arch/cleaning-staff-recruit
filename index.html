@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>夏季限定 清掃スタッフ募集｜木更津の民泊</title>
+<meta name="description" content="木更津市内のおしゃれな民泊で、夏季限定の清掃スタッフを募集中。時給1,300円〜（昇給あり）、週1日〜OK、未経験歓迎・研修あり。お気軽にお問い合わせください。">
+<meta property="og:title" content="夏季限定 清掃スタッフ募集｜木更津の民泊">
+<meta property="og:description" content="おしゃれな宿で運動不足解消！時給1,300円〜（昇給あり）・週1日〜OK・未経験歓迎。木更津市内の民泊清掃スタッフ募集。">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#3A8E7C">
+<style>
+:root{
+  --green:#3A8E7C; --green-dk:#27695B; --green-lt:#E6F2EE;
+  --blue:#67B0C2; --yellow:#F4C92F;
+  --ink:#2c2c2c; --gray:#5A5A5A; --gray-lt:#9aa0a0;
+  --bg:#F4F8F5; --card:#ffffff; --line:#e2e8e4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+  color:var(--ink); background:var(--bg); line-height:1.75; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px 40px;position:relative;z-index:1}
+
+/* Decorative leaves */
+.leaf{position:fixed;pointer-events:none;z-index:0;opacity:.5}
+.leaf svg{display:block}
+.leaf.l1{top:-10px;left:-30px;transform:rotate(20deg)}
+.leaf.l2{top:60px;right:-40px;transform:rotate(-30deg) scaleX(-1)}
+.leaf.l3{bottom:40px;left:-45px;transform:rotate(-15deg)}
+.leaf.l4{bottom:-20px;right:-30px;transform:rotate(40deg) scaleX(-1)}
+@media(max-width:600px){.leaf{opacity:.35;transform-origin:center}}
+
+/* Hook bar */
+.hook{
+  background:var(--blue);color:#fff;text-align:center;font-weight:700;
+  border-radius:999px;padding:11px 18px;margin:18px 0 14px;font-size:14px;
+  box-shadow:0 4px 14px rgba(103,176,194,.3);letter-spacing:.2px;
+}
+.hook .hl{color:var(--yellow)}
+
+/* Hero */
+.hero{text-align:center;padding:6px 0 10px}
+.badge{
+  display:inline-block;background:var(--green);color:#fff;font-weight:700;
+  font-size:12px;padding:6px 16px;border-radius:999px;letter-spacing:1px;margin-bottom:14px;
+}
+.hero h1{
+  font-size:30px;font-weight:800;line-height:1.35;color:var(--ink);letter-spacing:.5px;
+}
+.hero .sub{color:var(--green-dk);font-weight:600;font-size:15px;margin-top:10px}
+@media(max-width:380px){.hero h1{font-size:25px}}
+
+/* Section card */
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:20px 18px;margin:16px 0;box-shadow:0 2px 10px rgba(39,105,91,.05);
+  position:relative;
+}
+.card-tab{
+  display:inline-block;background:var(--green-lt);color:var(--green-dk);
+  font-weight:700;font-size:12px;padding:4px 12px;border-radius:8px;margin-bottom:14px;
+}
+
+/* Job detail rows */
+.rows{display:flex;flex-direction:column;gap:13px}
+.row{display:flex;align-items:baseline;gap:12px}
+.row .k{
+  flex:0 0 58px;background:var(--green-lt);color:var(--green-dk);font-weight:700;
+  font-size:12px;text-align:center;border-radius:6px;padding:4px 0;line-height:1.4;
+}
+.row .v{flex:1;font-size:15px;color:var(--ink)}
+.row .v .big{font-size:24px;font-weight:800;color:var(--green-dk);letter-spacing:.3px}
+.row .v .note{font-size:12px;color:var(--gray);margin-left:2px}
+
+/* Welcome cards */
+.welcome-title{text-align:center;color:var(--gray);font-weight:600;font-size:15px;margin:26px 0 14px}
+.welcome{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.wc{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:16px 6px 14px;text-align:center;
+}
+.wc .ic{height:34px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+.wc .t{font-size:13px;font-weight:600;line-height:1.45;color:var(--ink)}
+@media(max-width:380px){.wc .t{font-size:12px}}
+
+/* Message */
+.msg{font-size:14px;color:var(--gray);line-height:1.9}
+
+/* Training banner */
+.train{
+  background:var(--green);color:#fff;text-align:center;font-weight:700;font-size:14px;
+  border-radius:12px;padding:13px 14px;margin:18px 0;
+}
+
+/* Contact */
+.contact{
+  background:linear-gradient(160deg,#ffffff,#f3f9f5);
+  border:2px solid var(--green);border-radius:18px;padding:24px 18px;margin:18px 0;text-align:center;
+}
+.contact h2{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.contact .lead{font-size:13px;color:var(--gray);margin-bottom:16px}
+.tel-btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--green);color:#fff;text-decoration:none;font-weight:800;
+  font-size:26px;letter-spacing:1px;padding:14px;border-radius:14px;
+  box-shadow:0 4px 14px rgba(58,142,124,.35);
+}
+.tel-btn small{font-size:12px;font-weight:600;opacity:.9}
+.tel-meta{font-size:12px;color:var(--gray);margin-top:10px;line-height:1.7}
+.or{display:flex;align-items:center;gap:12px;color:var(--gray-lt);font-size:12px;margin:20px 0 8px}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* Form */
+form{text-align:left;margin-top:6px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:13px;font-weight:700;color:var(--green-dk);margin-bottom:5px}
+.field .req{color:#d8584f;font-size:11px;margin-left:4px}
+.field .opt{color:var(--gray-lt);font-size:11px;margin-left:4px;font-weight:400}
+.field input,.field textarea,.field select{
+  width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 13px;
+  font-size:16px;font-family:inherit;color:var(--ink);background:#fff;
+}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(58,142,124,.12)
+}
+.field textarea{min-height:84px;resize:vertical}
+.submit{
+  width:100%;background:var(--green);color:#fff;border:none;border-radius:12px;
+  padding:15px;font-size:16px;font-weight:800;font-family:inherit;cursor:pointer;
+  box-shadow:0 4px 14px rgba(58,142,124,.3);transition:transform .08s,background .2s;
+}
+.submit:hover{background:var(--green-dk)}
+.submit:active{transform:scale(.99)}
+.submit:disabled{opacity:.6;cursor:wait}
+.form-note{font-size:11px;color:var(--gray-lt);margin-top:10px;text-align:center;line-height:1.7}
+
+/* Success message */
+.success{
+  display:none;background:var(--green-lt);border:1px solid var(--green);border-radius:14px;
+  padding:22px 18px;text-align:center;color:var(--green-dk);
+}
+.success.show{display:block;animation:pop .3s ease}
+.success .chk{font-size:34px;line-height:1;margin-bottom:8px}
+.success h3{font-size:17px;font-weight:800;margin-bottom:6px}
+.success p{font-size:13px;color:var(--gray)}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.footer-note{
+  font-size:12px;color:var(--gray);text-align:center;margin-top:18px;
+  background:#fff;border:1px dashed var(--green);border-radius:10px;padding:11px 12px;
+}
+.copyright{text-align:center;font-size:11px;color:var(--gray-lt);margin-top:24px}
+</style>
+</head>
+<body>
+
+<!-- Decorative leaves -->
+<div class="leaf l1"><svg width="120" height="150" viewBox="0 0 120 150"><path d="M20 10 C70 30 110 80 60 145 C40 90 20 50 20 10Z" fill="#BFE0CF"/><path d="M22 18 C45 60 55 100 58 138" stroke="#9ECDB5" stroke-width="2" fill="none"/></svg></div>
+<div class="leaf l2"><svg width="100" height="130" viewBox="0 0 100 130"><path d="M16 8 C58 24 92 66 50 124 C34 76 16 42 16 8Z" fill="#CFE7D9"/></svg></div>
+<div class="leaf l3"><svg width="110" height="140" viewBox="0 0 110 140"><path d="M18 10 C64 28 100 74 55 134 C38 82 18 46 18 10Z" fill="#C6E2D2"/></svg></div>
+<div class="leaf l4"><svg width="120" height="150" viewBox="0 0 120 150"><path d="M20 10 C70 30 110 80 60 145 C40 90 20 50 20 10Z" fill="#BFE0CF"/></svg></div>
+
+<div class="wrap">
+
+  <div class="hook">おしゃれな宿で <span class="hl">運動不足解消！</span> スタッフ募集中</div>
+
+  <header class="hero">
+    <span class="badge">夏季限定 スタッフ募集</span>
+    <h1>この夏、<br>ご近所で働きませんか？</h1>
+    <p class="sub">〜 民泊のお部屋清掃のおしごと 〜</p>
+  </header>
+
+  <!-- Job details -->
+  <section class="card">
+    <span class="card-tab">おしごと内容</span>
+    <div class="rows">
+      <div class="row"><div class="k">お仕事</div><div class="v">民泊のお部屋清掃・ベッドメイキング・備品補充</div></div>
+      <div class="row"><div class="k">時給</div><div class="v"><span class="big">1,300</span>円〜<span class="note">（昇給あり）</span></div></div>
+      <div class="row"><div class="k">期間</div><div class="v">2026年 7月〜8月（夏休み期間）</div></div>
+      <div class="row"><div class="k">時間</div><div class="v">11:00 〜 18:00（週1日〜OK！）</div></div>
+      <div class="row"><div class="k">場所</div><div class="v">木更津市内の民泊施設</div></div>
+    </div>
+  </section>
+
+  <!-- Welcome -->
+  <p class="welcome-title">〜 こんな方、大歓迎です！ 〜</p>
+  <div class="welcome">
+    <div class="wc">
+      <div class="ic"><svg width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="11" stroke="#3A8E7C" stroke-width="2.2"/><path d="M9.5 15.2l3.4 3.4L20.5 11" stroke="#3A8E7C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="t">丁寧にお仕事<br>できる方</div>
+    </div>
+    <div class="wc">
+      <div class="ic"><svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 26V13" stroke="#3A8E7C" stroke-width="2.2" stroke-linecap="round"/><path d="M15 14c0-3.2-2.6-5.8-5.8-5.8C8.2 11.4 10.8 14 14 14h1z" fill="#3A8E7C"/><path d="M15 12c0-3.2 2.6-5.8 5.8-5.8C21.8 9.4 19.2 12 16 12h-1z" fill="#3A8E7C"/></svg></div>
+      <div class="t">未経験でも<br>大丈夫！</div>
+    </div>
+    <div class="wc">
+      <div class="ic"><svg width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="10.5" r="4.5" fill="#3A8E7C"/><path d="M6.5 24c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8" fill="#3A8E7C"/></svg></div>
+      <div class="t">ご近所で<br>働きたい方</div>
+    </div>
+  </div>
+
+  <!-- Message -->
+  <section class="card">
+    <span class="card-tab">担当者より</span>
+    <p class="msg">私たちは泊まりにいらっしゃるゲストの方に「この宿を選んでよかった」と心から思っていただける宿運営を心掛けています。ただの作業としてではなく、一つ一つのお掃除に心を込めて取り組んでいただけるような方とお会いできると嬉しいです。一度きりの採用ではなく、今後とも長くお付き合いできる関係を大切にしています。</p>
+  </section>
+
+  <div class="train">〜 研修あり・丁寧にお教えします！ シフト相談OK 〜</div>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>まずはお気軽にご連絡ください</h2>
+    <p class="lead">お電話・フォーム どちらでもOKです</p>
+
+    <a class="tel-btn" href="tel:070-2294-0290">
+      <span>📞</span>
+      <span>070-2294-0290<br><small>受付 10:00〜19:00 / 担当：原</small></span>
+    </a>
+    <p class="tel-meta">OPP（運営会社）</p>
+
+    <div class="or">または フォームから応募</div>
+
+    <form id="applyForm" action="https://formsubmit.co/masaki0515opp@gmail.com" method="POST">
+      <!-- FormSubmit settings -->
+      <input type="hidden" name="_subject" value="【清掃スタッフ応募】LP/看板QR経由">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://0515opp-arch.github.io/cleaning-staff-recruit/thanks.html">
+      <input type="hidden" name="流入経路" value="LP（看板QRコード）">
+      <!-- honeypot -->
+      <input type="text" name="_honey" style="display:none">
+
+      <div class="field">
+        <label>お名前<span class="req">必須</span></label>
+        <input type="text" name="お名前" required placeholder="例：山田 花子">
+      </div>
+      <div class="field">
+        <label>電話番号<span class="req">必須</span></label>
+        <input type="tel" name="電話番号" required placeholder="例：090-1234-5678" inputmode="tel">
+      </div>
+      <div class="field">
+        <label>メールアドレス<span class="opt">任意</span></label>
+        <input type="email" name="メールアドレス" placeholder="例：hanako@example.com" inputmode="email">
+      </div>
+      <div class="field">
+        <label>希望の働き方・ご質問など<span class="opt">任意</span></label>
+        <textarea name="希望・ご質問" placeholder="例：週2日くらい希望、土日も働けます／〇〇地区在住です など"></textarea>
+      </div>
+      <button type="submit" class="submit" id="submitBtn">この内容で応募する</button>
+      <p class="form-note">送信いただいた内容は運営担当に届きます。<br>通常1〜2営業日以内にご連絡いたします。</p>
+    </form>
+
+    <div class="success" id="successBox">
+      <div class="chk">🌱</div>
+      <h3>応募ありがとうございます！</h3>
+      <p>担当者より追ってご連絡いたします。<br>お急ぎの場合はお電話（070-2294-0290）でもどうぞ。</p>
+    </div>
+  </section>
+
+  <p class="footer-note">※ ご連絡の際は「<strong>看板（チラシ）を見た</strong>」とお伝えいただくとスムーズです。</p>
+
+  <p class="copyright">© 2026 OPP — 木更津 民泊清掃スタッフ募集</p>
+
+</div>
+
+<script>
+// AJAX submit to FormSubmit so we can show an inline thank-you without a redirect.
+(function(){
+  var form = document.getElementById('applyForm');
+  var btn = document.getElementById('submitBtn');
+  var successBox = document.getElementById('successBox');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    // honeypot check
+    if(form.querySelector('[name="_honey"]').value){ e.preventDefault(); return; }
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = '送信中…';
+    var data = new FormData(form);
+    fetch('https://formsubmit.co/ajax/masaki0515opp@gmail.com', {
+      method:'POST',
+      headers:{'Accept':'application/json'},
+      body:data
+    }).then(function(r){ return r.json(); })
+      .then(function(){
+        form.style.display='none';
+        successBox.classList.add('show');
+        successBox.scrollIntoView({behavior:'smooth', block:'center'});
+      })
+      .catch(function(){
+        // Fallback: do a normal POST (FormSubmit will redirect to _next)
+        btn.disabled=false; btn.textContent='この内容で応募する';
+        form.submit();
+      });
+  });
+})();
+</script>
+</body>
+</html>
