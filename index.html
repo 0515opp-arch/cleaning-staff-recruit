@@ -136,7 +136,13 @@ form{text-align:left;margin-top:6px}
 .submit:hover{background:var(--green-dk)}
 .submit:active{transform:scale(.99)}
 .submit:disabled{opacity:.6;cursor:wait}
-.form-note{font-size:11px;color:var(--gray-lt);margin-top:10px;text-align:center;line-height:1.7}
+.form-note{font-size:11px;color:var(--gray-lt);margin-top:12px;text-align:center;line-height:1.7}
+.form-note a{color:var(--green);font-weight:600}
+.form-embed{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(39,105,91,.05);margin-top:4px}
+.form-embed iframe{display:block;width:100%;height:1180px;border:0}
+.form-open{display:inline-block;margin-top:12px;font-size:13px;font-weight:600;color:var(--green);text-decoration:none}
+.form-open:hover{text-decoration:underline}
+@media(max-width:400px){.form-embed iframe{height:1240px}}
 
 /* Success message */
 .success{
@@ -222,52 +228,17 @@ form{text-align:left;margin-top:6px}
     </a>
     <p class="tel-meta">OPP（運営会社）</p>
 
-    <div class="or">または フォームから応募</div>
+    <div class="or">または 応募フォームから</div>
 
-    <form id="applyForm" action="https://formsubmit.co/masaki0515opp@gmail.com" method="POST">
-      <!-- FormSubmit settings -->
-      <input type="hidden" name="_subject" value="【清掃スタッフ応募】LP/看板QR経由">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://0515opp-arch.github.io/cleaning-staff-recruit/thanks.html">
-      <input type="hidden" name="流入経路" value="LP（看板QRコード）">
-      <!-- honeypot -->
-      <input type="text" name="_honey" style="display:none">
-
-      <div class="field">
-        <label>お名前<span class="req">必須</span></label>
-        <input type="text" name="お名前" required placeholder="例：山田 花子">
-      </div>
-      <div class="field">
-        <label>電話番号<span class="req">必須</span></label>
-        <input type="tel" name="電話番号" required placeholder="例：090-1234-5678" inputmode="tel">
-      </div>
-      <div class="field">
-        <label>メールアドレス<span class="opt">任意</span></label>
-        <input type="email" name="メールアドレス" placeholder="例：hanako@example.com" inputmode="email">
-      </div>
-      <div class="field">
-        <label>希望の働き方・ご質問など<span class="opt">任意</span></label>
-        <textarea name="希望・ご質問" placeholder="例：週2日くらい希望、土日も働けます／〇〇地区在住です など"></textarea>
-      </div>
-      <button type="submit" class="submit" id="submitBtn">この内容で応募する</button>
-      <p class="form-note">送信いただいた内容は運営担当に届きます。通常1〜2営業日以内にご連絡いたします。<br>
-        うまく送信できないときは <a href="tel:070-2294-0290">お電話</a> または
-        <a id="mailFallback" href="mailto:masaki0515opp@gmail.com?subject=%E3%80%90%E6%B8%85%E6%8E%83%E3%82%B9%E3%82%BF%E3%83%83%E3%83%95%E5%BF%9C%E5%8B%9F%E3%80%91&body=%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E9%9B%BB%E8%A9%B1%E7%95%AA%E5%8F%B7%EF%BC%9A%0A%E5%B8%8C%E6%9C%9B%E3%83%BB%E3%81%94%E8%B3%AA%E5%95%8F%EF%BC%9A%0A%0A%E2%80%BB%E7%9C%8B%E6%9D%BF%EF%BC%88%E3%83%81%E3%83%A9%E3%82%B7%EF%BC%89%E3%82%92%E8%A6%8B%E3%81%A6%E5%BF%9C%E5%8B%9F">メール</a> でも受け付けています。</p>
-    </form>
-
-    <div class="success" id="successBox">
-      <div class="chk">🌱</div>
-      <h3>応募ありがとうございます！</h3>
-      <p>担当者より追ってご連絡いたします。<br>お急ぎの場合はお電話（070-2294-0290）でもどうぞ。</p>
+    <div class="form-embed">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLScLlepclw91uGursXmQt8BC-npjWrAmyqGEGKwChUdraA_r1g/viewform?embedded=true"
+        title="清掃スタッフ募集 応募フォーム"
+        loading="lazy"
+        frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
     </div>
-
-    <div class="success" id="mailBox">
-      <div class="chk">✉️</div>
-      <h3>メールアプリを開きました</h3>
-      <p>入力内容を入れたメールが開きます。<strong>そのまま送信</strong>してください。<br>
-        開かない場合は <a href="tel:070-2294-0290">お電話（070-2294-0290）</a> でも受け付けています。</p>
-    </div>
+    <a class="form-open" href="https://docs.google.com/forms/d/e/1FAIpQLScLlepclw91uGursXmQt8BC-npjWrAmyqGEGKwChUdraA_r1g/viewform" target="_blank" rel="noopener">フォームが表示されない場合はこちら（別タブで開く） ↗</a>
+    <p class="form-note">ご記入が難しい場合は <a href="tel:070-2294-0290">お電話（070-2294-0290）</a> でも受け付けています。</p>
   </section>
 
   <p class="footer-note">※ ご連絡の際は「<strong>看板（チラシ）を見た</strong>」とお伝えいただくとスムーズです。</p>
@@ -275,99 +246,5 @@ form{text-align:left;margin-top:6px}
   <p class="copyright">© 2026 OPP — 木更津 民泊清掃スタッフ募集</p>
 
 </div>
-
-<script>
-/*
-  Robust submit: try FormSubmit (AJAX) with a timeout. If it's unreachable
-  (e.g. service outage) or errors, automatically fall back to opening the
-  visitor's mail app with a pre-filled email — so an application always has
-  a working path even if the third-party form service is down.
-*/
-(function(){
-  var form = document.getElementById('applyForm');
-  var btn = document.getElementById('submitBtn');
-  var successBox = document.getElementById('successBox');
-  var mailBox = document.getElementById('mailBox');
-  if(!form) return;
-
-  var MAIL_TO = 'masaki0515opp@gmail.com';
-
-  function val(name){
-    var el = form.querySelector('[name="'+name+'"]');
-    return el ? (el.value||'').trim() : '';
-  }
-
-  function buildMailtoHref(){
-    var subject = '【清掃スタッフ応募】LP/看板QR経由';
-    var body =
-      'お名前：' + val('お名前') + '\n' +
-      '電話番号：' + val('電話番号') + '\n' +
-      'メールアドレス：' + val('メールアドレス') + '\n' +
-      '希望・ご質問：' + val('希望・ご質問') + '\n\n' +
-      '※看板（チラシ）を見て応募';
-    return 'mailto:' + MAIL_TO +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body);
-  }
-
-  function showSuccess(){
-    form.style.display='none';
-    successBox.classList.add('show');
-    successBox.scrollIntoView({behavior:'smooth', block:'center'});
-  }
-
-  function fallbackToMail(){
-    // open the visitor's mail client pre-filled
-    window.location.href = buildMailtoHref();
-    form.style.display='none';
-    mailBox.classList.add('show');
-    mailBox.scrollIntoView({behavior:'smooth', block:'center'});
-  }
-
-  function fetchWithTimeout(url, opts, ms){
-    return new Promise(function(resolve, reject){
-      var done = false;
-      var timer = setTimeout(function(){ if(!done){ done=true; reject(new Error('timeout')); } }, ms);
-      fetch(url, opts).then(function(r){
-        if(done) return; done=true; clearTimeout(timer);
-        if(!r.ok){ reject(new Error('http '+r.status)); return; }
-        resolve(r);
-      }).catch(function(err){
-        if(done) return; done=true; clearTimeout(timer); reject(err);
-      });
-    });
-  }
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    // honeypot
-    if(form.querySelector('[name="_honey"]').value){ return; }
-    // basic required check (native validation already runs, but guard anyway)
-    if(!val('お名前') || !val('電話番号')){ form.reportValidity(); return; }
-
-    btn.disabled = true;
-    btn.textContent = '送信中…';
-
-    var data = new FormData(form);
-    fetchWithTimeout('https://formsubmit.co/ajax/' + MAIL_TO, {
-      method:'POST',
-      headers:{'Accept':'application/json'},
-      body:data
-    }, 8000)
-      .then(function(r){ return r.json(); })
-      .then(function(json){
-        if(json && (json.success === true || json.success === 'true')){
-          showSuccess();
-        } else {
-          fallbackToMail();
-        }
-      })
-      .catch(function(){
-        // service down / blocked / timeout → use mail app
-        fallbackToMail();
-      });
-  });
-})();
-</script>
 </body>
 </html>
