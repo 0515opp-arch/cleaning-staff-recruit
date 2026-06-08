@@ -251,13 +251,22 @@ form{text-align:left;margin-top:6px}
         <textarea name="希望・ご質問" placeholder="例：週2日くらい希望、土日も働けます／〇〇地区在住です など"></textarea>
       </div>
       <button type="submit" class="submit" id="submitBtn">この内容で応募する</button>
-      <p class="form-note">送信いただいた内容は運営担当に届きます。<br>通常1〜2営業日以内にご連絡いたします。</p>
+      <p class="form-note">送信いただいた内容は運営担当に届きます。通常1〜2営業日以内にご連絡いたします。<br>
+        うまく送信できないときは <a href="tel:070-2294-0290">お電話</a> または
+        <a id="mailFallback" href="mailto:masaki0515opp@gmail.com?subject=%E3%80%90%E6%B8%85%E6%8E%83%E3%82%B9%E3%82%BF%E3%83%83%E3%83%95%E5%BF%9C%E5%8B%9F%E3%80%91&body=%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E9%9B%BB%E8%A9%B1%E7%95%AA%E5%8F%B7%EF%BC%9A%0A%E5%B8%8C%E6%9C%9B%E3%83%BB%E3%81%94%E8%B3%AA%E5%95%8F%EF%BC%9A%0A%0A%E2%80%BB%E7%9C%8B%E6%9D%BF%EF%BC%88%E3%83%81%E3%83%A9%E3%82%B7%EF%BC%89%E3%82%92%E8%A6%8B%E3%81%A6%E5%BF%9C%E5%8B%9F">メール</a> でも受け付けています。</p>
     </form>
 
     <div class="success" id="successBox">
       <div class="chk">🌱</div>
       <h3>応募ありがとうございます！</h3>
       <p>担当者より追ってご連絡いたします。<br>お急ぎの場合はお電話（070-2294-0290）でもどうぞ。</p>
+    </div>
+
+    <div class="success" id="mailBox">
+      <div class="chk">✉️</div>
+      <h3>メールアプリを開きました</h3>
+      <p>入力内容を入れたメールが開きます。<strong>そのまま送信</strong>してください。<br>
+        開かない場合は <a href="tel:070-2294-0290">お電話（070-2294-0290）</a> でも受け付けています。</p>
     </div>
   </section>
 
@@ -268,33 +277,94 @@ form{text-align:left;margin-top:6px}
 </div>
 
 <script>
-// AJAX submit to FormSubmit so we can show an inline thank-you without a redirect.
+/*
+  Robust submit: try FormSubmit (AJAX) with a timeout. If it's unreachable
+  (e.g. service outage) or errors, automatically fall back to opening the
+  visitor's mail app with a pre-filled email — so an application always has
+  a working path even if the third-party form service is down.
+*/
 (function(){
   var form = document.getElementById('applyForm');
   var btn = document.getElementById('submitBtn');
   var successBox = document.getElementById('successBox');
+  var mailBox = document.getElementById('mailBox');
   if(!form) return;
+
+  var MAIL_TO = 'masaki0515opp@gmail.com';
+
+  function val(name){
+    var el = form.querySelector('[name="'+name+'"]');
+    return el ? (el.value||'').trim() : '';
+  }
+
+  function buildMailtoHref(){
+    var subject = '【清掃スタッフ応募】LP/看板QR経由';
+    var body =
+      'お名前：' + val('お名前') + '\n' +
+      '電話番号：' + val('電話番号') + '\n' +
+      'メールアドレス：' + val('メールアドレス') + '\n' +
+      '希望・ご質問：' + val('希望・ご質問') + '\n\n' +
+      '※看板（チラシ）を見て応募';
+    return 'mailto:' + MAIL_TO +
+      '?subject=' + encodeURIComponent(subject) +
+      '&body=' + encodeURIComponent(body);
+  }
+
+  function showSuccess(){
+    form.style.display='none';
+    successBox.classList.add('show');
+    successBox.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  function fallbackToMail(){
+    // open the visitor's mail client pre-filled
+    window.location.href = buildMailtoHref();
+    form.style.display='none';
+    mailBox.classList.add('show');
+    mailBox.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  function fetchWithTimeout(url, opts, ms){
+    return new Promise(function(resolve, reject){
+      var done = false;
+      var timer = setTimeout(function(){ if(!done){ done=true; reject(new Error('timeout')); } }, ms);
+      fetch(url, opts).then(function(r){
+        if(done) return; done=true; clearTimeout(timer);
+        if(!r.ok){ reject(new Error('http '+r.status)); return; }
+        resolve(r);
+      }).catch(function(err){
+        if(done) return; done=true; clearTimeout(timer); reject(err);
+      });
+    });
+  }
+
   form.addEventListener('submit', function(e){
-    // honeypot check
-    if(form.querySelector('[name="_honey"]').value){ e.preventDefault(); return; }
     e.preventDefault();
+    // honeypot
+    if(form.querySelector('[name="_honey"]').value){ return; }
+    // basic required check (native validation already runs, but guard anyway)
+    if(!val('お名前') || !val('電話番号')){ form.reportValidity(); return; }
+
     btn.disabled = true;
     btn.textContent = '送信中…';
+
     var data = new FormData(form);
-    fetch('https://formsubmit.co/ajax/masaki0515opp@gmail.com', {
+    fetchWithTimeout('https://formsubmit.co/ajax/' + MAIL_TO, {
       method:'POST',
       headers:{'Accept':'application/json'},
       body:data
-    }).then(function(r){ return r.json(); })
-      .then(function(){
-        form.style.display='none';
-        successBox.classList.add('show');
-        successBox.scrollIntoView({behavior:'smooth', block:'center'});
+    }, 8000)
+      .then(function(r){ return r.json(); })
+      .then(function(json){
+        if(json && (json.success === true || json.success === 'true')){
+          showSuccess();
+        } else {
+          fallbackToMail();
+        }
       })
       .catch(function(){
-        // Fallback: do a normal POST (FormSubmit will redirect to _next)
-        btn.disabled=false; btn.textContent='この内容で応募する';
-        form.submit();
+        // service down / blocked / timeout → use mail app
+        fallbackToMail();
       });
   });
 })();
