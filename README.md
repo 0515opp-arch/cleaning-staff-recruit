@@ -12,7 +12,7 @@
 応募フォームは **Googleフォーム** を `index.html` に埋め込んでいます（安定・無料・回答が自動集計）。
 
 - フォーム本体：Google Apps Script で生成（`../google-form-setup.gs` 参照）
-- 回答用URL：`https://docs.google.com/forms/d/e/1FAIpQLScLlepclw91uGursXmQt8BC-npjWrAmyqGEGKwChUdraA_r1g/viewform`
+- 回答用URL：`https://docs.google.com/forms/d/e/1FAIpQLSdWC04vnjgy2WrycbkwtUwjrWISOPB76gatZvvrtSBlDdpzgA/viewform`
 - 回答は Google スプレッドシート「清掃スタッフ募集 応募一覧」に自動保存
 - 応募が届くたびに `masaki0515opp@gmail.com` へ自動通知メール
 - LP には埋め込み表示＋「別タブで開く」リンク＋電話フォールバックを併設
